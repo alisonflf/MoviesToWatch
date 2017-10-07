@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="57a5ac68b066d5fb09156021192adddc09c585e6">
+        <dex dex="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_661280be7a85b61c2a1b9b7c38328569d080b9dc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_a4d27b5b4f08db95e60fe16552676c85179c0cad\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\AlisonFrancisco\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_f6a90727318cb0ff8723ebcf8f9d107035140e79\classes.dex" />
+    </item>
+
+</items>

@@ -1,0 +1,117 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:2:1-36:12
+	package
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:3:5-51
+		INJECTED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:6:23-77
+application
+ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:8:5-34:19
+MERGED from [com.android.support:design:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\63dae5bac054299056d6c1ed06d00197a6fa85df\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\f85d5c16dd3278b83d7948bbf40a526ce6246b9e\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\85e6a028e56c2de3ce16dabf646066d016ec7d87\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\0e9b6c4f1f10371df3775abf7f3db7f2c9fe90f3\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\b96dfd4d6ee2b1f5857190a4f7d3c1558e2e38d9\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\71557641f18a3412bf49e101f1b67ffddc680bee\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\ed37622124975a2e99baf51abb67433adeb1770e\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\64e76f57ef0e0dbff9b2c7eebfc9862208112c55\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\34a8a3d2f64850ff01024828866678f7cb917dbc\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\c690d46956ec95cf69af73dce644058578d650cd\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\23edf4e90f5869518449a3369721d9876a3784be\output\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:11:9-41
+	android:supportsRtl
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:13:9-35
+	android:roundIcon
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:12:9-54
+	android:allowBackup
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:9:9-35
+	android:icon
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:10:9-43
+	android:theme
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:14:9-40
+activity#br.com.alisonfrancisco.moviestowatch.MainActivity
+ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:15:9-25:20
+	android:label
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:17:13-45
+	android:name
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:16:13-41
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER+android.net.conn.CONNECTIVITY_CHANGE
+ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:18:13-24:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:21:17-77
+	android:name
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:21:27-74
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:23:17-79
+	android:name
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:23:25-76
+receiver#br.com.alisonfrancisco.moviestowatch.receiver.NetworkChangeReceiver
+ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:27:9-33:20
+	android:enabled
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:28:13-35
+	android:exported
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:29:13-36
+	android:name
+		ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:27:19-65
+intent-filter#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml:30:13-32:29
+uses-sdk
+INJECTED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:design:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\63dae5bac054299056d6c1ed06d00197a6fa85df\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\f85d5c16dd3278b83d7948bbf40a526ce6246b9e\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\85e6a028e56c2de3ce16dabf646066d016ec7d87\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\cdb816bc16cafbf43872d7dc9a443b3b2c16ed82\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\0e9b6c4f1f10371df3775abf7f3db7f2c9fe90f3\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\b96dfd4d6ee2b1f5857190a4f7d3c1558e2e38d9\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\71557641f18a3412bf49e101f1b67ffddc680bee\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\ed37622124975a2e99baf51abb67433adeb1770e\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\64e76f57ef0e0dbff9b2c7eebfc9862208112c55\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\34a8a3d2f64850ff01024828866678f7cb917dbc\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\c690d46956ec95cf69af73dce644058578d650cd\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\23edf4e90f5869518449a3369721d9876a3784be\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\63dae5bac054299056d6c1ed06d00197a6fa85df\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\63dae5bac054299056d6c1ed06d00197a6fa85df\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\f85d5c16dd3278b83d7948bbf40a526ce6246b9e\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\85e6a028e56c2de3ce16dabf646066d016ec7d87\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\cdb816bc16cafbf43872d7dc9a443b3b2c16ed82\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\0e9b6c4f1f10371df3775abf7f3db7f2c9fe90f3\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\b96dfd4d6ee2b1f5857190a4f7d3c1558e2e38d9\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\71557641f18a3412bf49e101f1b67ffddc680bee\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\ed37622124975a2e99baf51abb67433adeb1770e\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\64e76f57ef0e0dbff9b2c7eebfc9862208112c55\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\34a8a3d2f64850ff01024828866678f7cb917dbc\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\c690d46956ec95cf69af73dce644058578d650cd\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\23edf4e90f5869518449a3369721d9876a3784be\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:design:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\63dae5bac054299056d6c1ed06d00197a6fa85df\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:design:25.3.1] C:\Users\AlisonFrancisco\.android\build-cache\63dae5bac054299056d6c1ed06d00197a6fa85df\output\AndroidManifest.xml:26:9-47

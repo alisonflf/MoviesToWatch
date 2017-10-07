@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MoviesToWatch</string>
+    <string name="navTitleSearch">Search Movie</string>
+    <string name="navTitleToWatch">Watch</string>
+    <string name="navTitleWatched">Watched</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="labelSearchMovie">Search</string>
+    <string name="msgNoConection">No internet connection, you will not be able to search</string>
+    <string name="msgConnectionRestored">Connection restored, you\'re alowed to search a movie</string>
+</resources>

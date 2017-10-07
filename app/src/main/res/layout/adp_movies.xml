@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/img"
+        android:text="moviename"/>
+
+    <TextView
+        android:id="@+id/txtRelease"
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTitle"
+        android:text="movieyear"
+        android:layout_toRightOf="@+id/img" />
+
+    <TextView
+        android:id="@+id/txtAvg"
+        android:textColor="#98a900"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtRelease"
+        android:text="nota"
+        android:layout_toRightOf="@+id/img" />
+
+
+
+</RelativeLayout>

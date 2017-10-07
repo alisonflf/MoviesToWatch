@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FilmesParaAssistir</string>
+    <string name="navTitleSearch">Buscar Filme</string>
+    <string name="navTitleToWatch">Assitir</string>
+    <string name="navTitleWatched">Assistidos</string>
+    <string name="labelSearchMovie">Buscar</string>
+    <string name="msgNoConection">Sem Conexão com a internet,não será possível pesquisar</string>
+    <string name="msgConnectionRestored">Conexão com a internet restaurada</string>
+</resources>

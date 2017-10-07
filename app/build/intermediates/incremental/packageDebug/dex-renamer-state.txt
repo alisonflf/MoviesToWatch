@@ -1,0 +1,7 @@
+#Sat Oct 07 15:53:29 GMT-03:00 2017
+base.0=C\:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_a4d27b5b4f08db95e60fe16552676c85179c0cad
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_661280be7a85b61c2a1b9b7c38328569d080b9dc\\classes.dex
+base.1=C\:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_661280be7a85b61c2a1b9b7c38328569d080b9dc
+file.0=C\:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_a4d27b5b4f08db95e60fe16552676c85179c0cad\\classes.dex
