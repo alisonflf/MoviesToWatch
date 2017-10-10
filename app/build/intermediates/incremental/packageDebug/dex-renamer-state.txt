@@ -1,4 +1,4 @@
-#Sat Oct 07 15:53:29 GMT-03:00 2017
+#Sat Oct 07 19:03:50 GMT-03:00 2017
 base.0=C\:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_a4d27b5b4f08db95e60fe16552676c85179c0cad
 renamed.1=classes2.dex
 renamed.0=classes.dex

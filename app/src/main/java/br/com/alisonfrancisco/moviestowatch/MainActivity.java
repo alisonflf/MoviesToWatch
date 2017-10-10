@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             toWatchFragment = new ToWatchFragment();
             watchedFragment = new WatchedFragment();
 
-            fragmentManager.beginTransaction().add(R.id.content, toWatchFragment).commit();
+            fragmentManager.beginTransaction().add(R.id.content, searchFragment).commit();
         } else {
             buildFragments(fragmentManager);
         }

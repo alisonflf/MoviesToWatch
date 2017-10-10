@@ -2,7 +2,6 @@ package br.com.alisonfrancisco.moviestowatch.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -24,8 +24,10 @@ import okhttp3.Callback;
 
 public class SearchFragment extends Fragment {
     private static final String ARG_API_KEY = "4277f0776300025895ed7999e22fb605";
+    static final String STATE_SEARCH = "edtSearchTest";
     private Button buttonSearch = null;
     private EditText searchEdit = null;
+    private ListView listView = null;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -48,25 +50,48 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
-        final ListView listView = (ListView) view.findViewById(R.id.listResult);
         buttonSearch = (Button) view.findViewById(R.id.buttonSearch);
         searchEdit = (EditText) view.findViewById(R.id.edtSearchQuery);
+        listView = (ListView) view.findViewById(R.id.listResult);
 
-        if (!TextUtils.isEmpty(searchEdit.getText())) {
-            searchMovies(listView);
+        if (savedInstanceState != null) {
+            String search = savedInstanceState.getString(STATE_SEARCH);
+
+            if (!search.isEmpty()) {
+                searchEdit.setText(search);
+                searchMovies();
+            }
         }
 
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                searchMovies(listView);
+                if (!isEmpty(searchEdit)) {
+                    searchMovies();
+                } else {
+                    Toast.makeText(getContext(),"digite um texto para busca", Toast.LENGTH_LONG);
+                }
             }
         });
 
         return view;
     }
 
-    public void searchMovies(final ListView pListView) {
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if (!isEmpty(searchEdit)) {
+            searchMovies();
+        }
+    }
+
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putString(STATE_SEARCH, searchEdit.getText().toString());
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    public void searchMovies() {
         TBMD tbmdAPI = new TBMD(ARG_API_KEY);
         try {
             //TODO buscar
@@ -87,7 +112,7 @@ public class SearchFragment extends Fragment {
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                pListView.setAdapter(lstAdp);
+                                listView.setAdapter(lstAdp);
                             }
                         });
 
@@ -98,6 +123,10 @@ public class SearchFragment extends Fragment {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private boolean isEmpty(EditText etText) {
+        return etText.getText().toString().trim().length() == 0;
     }
 
     @Override
