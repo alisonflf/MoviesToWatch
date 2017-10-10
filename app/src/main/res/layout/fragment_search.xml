@@ -17,20 +17,21 @@
             android:layout_weight="0.26"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text=""
+            android:text="star"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
         <Button
             android:id="@+id/buttonSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:focusable="false"
             android:text="@string/labelSearchMovie" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/listResult"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     </ListView>
 
 </LinearLayout>

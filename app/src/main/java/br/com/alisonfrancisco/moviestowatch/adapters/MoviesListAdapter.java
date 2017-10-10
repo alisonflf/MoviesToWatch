@@ -22,7 +22,6 @@ public class MoviesListAdapter extends ArrayAdapter<Movie>{
         super(context,0,movies);
     }
 
-
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -52,4 +51,5 @@ public class MoviesListAdapter extends ArrayAdapter<Movie>{
 
         return convertView;
     }
+
 }

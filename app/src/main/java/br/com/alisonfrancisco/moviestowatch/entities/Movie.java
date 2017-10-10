@@ -3,9 +3,12 @@ package br.com.alisonfrancisco.moviestowatch.entities;
 
 import com.google.gson.annotations.SerializedName;
 
+
 public class Movie {
 
     public String title;
+
+    public String id;
 
     @SerializedName("poster_path")
     public String posterPath;
