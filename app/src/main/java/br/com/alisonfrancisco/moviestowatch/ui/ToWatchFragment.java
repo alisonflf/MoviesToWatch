@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.alisonfrancisco.moviestowatch.R;
@@ -62,6 +63,7 @@ public class ToWatchFragment extends Fragment {
 
     public Movies query() {
         Movies moviesList = new Movies();
+        ArrayList<Movie> lista = new ArrayList<>();
 
         SQLiteDatabase db = mySqlHelper.getWritableDatabase();
 
@@ -70,29 +72,27 @@ public class ToWatchFragment extends Fragment {
                         MyDataBaseContract.Movies.COL_TITLE,
                         MyDataBaseContract.Movies.COL_OVERVIEW,
                         MyDataBaseContract.Movies.COL_WATCHED},
-                " title = ?",
-                new String[]{"Star Wars"}, null, null, null);
+                " watched = 'N'",
+                null, null, null, null);
 
         if (c != null && c.moveToFirst()) {
+            //recupera índices das colunas
+            int colIdIndex = c.getColumnIndex(MyDataBaseContract.Movies.COL_ID);
+            int colTitleIndex = c.getColumnIndex(MyDataBaseContract.Movies.COL_TITLE);
+            int colOverviewIndex = c.getColumnIndex(MyDataBaseContract.Movies.COL_OVERVIEW);
+
             do {
                 Movie movie = new Movie();
-
-                int colIdIndex = c.getColumnIndex(MyDataBaseContract.Movies.COL_ID);
-                int colTitleIndex = c.getColumnIndex(MyDataBaseContract.Movies.COL_TITLE);
-                int colOverviewIndex = c.getColumnIndex(MyDataBaseContract.Movies.COL_OVERVIEW);
 
                 movie.id = c.getString(colIdIndex);
                 movie.title = c.getString(colTitleIndex);
                 movie.overview = c.getString(colOverviewIndex);
 
-                if (moviesList.results == null) {
-                    moviesList.results.set(0,movie);
-                } else {
-                    moviesList.results.add(movie);
-                }
+                lista.add(movie);
 
             } while(c.moveToNext());
 
+            moviesList.results = lista;
             c.close();
         }
 
