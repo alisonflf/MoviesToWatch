@@ -3,9 +3,12 @@ package br.com.alisonfrancisco.moviestowatch.ui;
 import java.io.IOException;
 
 import android.content.ContentValues;
+import android.content.DialogInterface;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +17,11 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import br.com.alisonfrancisco.moviestowatch.MainActivity;
 import br.com.alisonfrancisco.moviestowatch.persistence.MyDataBaseContract;
 import br.com.alisonfrancisco.moviestowatch.persistence.MySqlHelper;
 import okhttp3.Call;
@@ -35,6 +40,7 @@ public class SearchFragment extends Fragment {
     private EditText searchEdit = null;
     private ListView listView = null;
     private MySqlHelper mySqlHelper;
+    private AlertDialog alerta;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -74,10 +80,32 @@ public class SearchFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Movie movie = (Movie) adapterView.getItemAtPosition(i);
+                final Movie movie = (Movie) adapterView.getItemAtPosition(i);
 
                 if (!movie.id.isEmpty()) {
-                    insert(movie);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setMessage(R.string.msgWatchLaterQuestion);
+
+                    builder.setPositiveButton(R.string.msgYes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface arg0, int arg1) {
+
+                            try {
+                                insert(movie);
+                                Toast.makeText(getActivity(), R.string.msgMovieAdded, Toast.LENGTH_SHORT).show();
+                            } catch (Exception e) {
+                                Toast.makeText(getActivity(), R.string.msgErroRecording, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+                    builder.setNegativeButton(R.string.msgNo, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            //
+                        }
+                    });
+
+                    alerta = builder.create();
+                    alerta.show();
                 }
             }
         });
@@ -103,7 +131,7 @@ public class SearchFragment extends Fragment {
         }
     }
 
-    public void insert(Movie pMovie) {
+    public void insert(Movie pMovie) throws SQLiteConstraintException {
         SQLiteDatabase db = mySqlHelper.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();

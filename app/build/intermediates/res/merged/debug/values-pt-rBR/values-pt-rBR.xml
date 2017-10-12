@@ -22,7 +22,15 @@
     <string name="app_name">FilmesParaAssistir</string>
     <string name="labelSearchMovie">Buscar</string>
     <string name="msgConnectionRestored">Conexão com a internet restaurada</string>
+    <string name="msgErroRecording">Erro ao Gravar</string>
+    <string name="msgMovieAdded">Filme adicionado a lista para assistir</string>
+    <string name="msgMovieMarkedWatched">Filme Marcado Como Assistido</string>
+    <string name="msgMovieWatched">Marcar o filme como Assistido?</string>
+    <string name="msgNo">Não</string>
     <string name="msgNoConection">Sem Conexão com a internet,não será possível pesquisar</string>
+    <string name="msgReturnToWatch">retornar o filme a lista \"assistir\"?</string>
+    <string name="msgWatchLaterQuestion">Deseja marcar o filme para assitir depois?</string>
+    <string name="msgYes">Sim</string>
     <string name="navTitleSearch">Buscar Filme</string>
     <string name="navTitleToWatch">Assitir</string>
     <string name="navTitleWatched">Assistidos</string>

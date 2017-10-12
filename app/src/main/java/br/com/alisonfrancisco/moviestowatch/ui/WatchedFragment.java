@@ -1,13 +1,18 @@
 package br.com.alisonfrancisco.moviestowatch.ui;
 
+import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,6 +28,7 @@ public class WatchedFragment extends Fragment {
 
     private MySqlHelper mySqlHelper;
     private ListView listView = null;
+    private AlertDialog alert;
 
     public WatchedFragment() {
         // Required empty public constructor
@@ -43,7 +49,55 @@ public class WatchedFragment extends Fragment {
 
         refreshListWatched();
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                final Movie movie = (Movie) adapterView.getItemAtPosition(i);
+
+                if (!movie.id.isEmpty()) {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setMessage(R.string.msgReturnToWatch);
+
+                    builder.setPositiveButton(R.string.msgYes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface arg0, int arg1) {
+
+                            try {
+                                markAsToWatch(movie.id);
+                                refreshListWatched();
+                                Toast.makeText(getActivity(), R.string.msgMovieAdded, Toast.LENGTH_SHORT).show();
+                            } catch (Exception e) {
+                                Toast.makeText(getActivity(), R.string.msgErroRecording, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+                    builder.setNegativeButton(R.string.msgNo, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            //
+                        }
+                    });
+
+                    alert = builder.create();
+                    alert.show();
+                }
+            }
+        });
+
         return view;
+    }
+
+    public void markAsToWatch(String pId) {
+        SQLiteDatabase db = mySqlHelper.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(MyDataBaseContract.Movies.COL_WATCHED, "N");
+        db.update(MyDataBaseContract.Movies.TABLE_NAME,
+                contentValues,
+                " _id = ? ",
+                new String[]{pId});
+
+        db.close();
     }
 
     private void refreshListWatched() {
@@ -52,6 +106,14 @@ public class WatchedFragment extends Fragment {
 
         if (moviesList.results != null) {
             final WatchedListAdapter lstAdp = new WatchedListAdapter(getContext(), moviesList.results);
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    listView.setAdapter(lstAdp);
+                }
+            });
+        } else {
+            final WatchedListAdapter lstAdp = new WatchedListAdapter(getContext(), new ArrayList<Movie>());
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {

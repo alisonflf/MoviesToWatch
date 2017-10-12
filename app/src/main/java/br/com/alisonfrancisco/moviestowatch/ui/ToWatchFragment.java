@@ -1,15 +1,18 @@
 package br.com.alisonfrancisco.moviestowatch.ui;
 
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -25,6 +28,7 @@ public class ToWatchFragment extends Fragment {
 
     private MySqlHelper mySqlHelper;
     private ListView listView = null;
+    private AlertDialog alert;
 
     public ToWatchFragment() {
         // Required empty public constructor
@@ -47,11 +51,34 @@ public class ToWatchFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Movie movie = (Movie) adapterView.getItemAtPosition(i);
+                final Movie movie = (Movie) adapterView.getItemAtPosition(i);
 
                 if (!movie.id.isEmpty()) {
-                    markAsWatched(movie.id);
-                    refreshListToWatch();
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setMessage(R.string.msgMovieWatched);
+
+                    builder.setPositiveButton(R.string.msgYes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface arg0, int arg1) {
+
+                            try {
+                                markAsWatched(movie.id);
+                                refreshListToWatch();
+                                Toast.makeText(getActivity(), R.string.msgMovieMarkedWatched, Toast.LENGTH_SHORT).show();
+                            } catch (Exception e) {
+                                Toast.makeText(getActivity(), R.string.msgErroRecording, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+                    builder.setNegativeButton(R.string.msgNo, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            //
+                        }
+                    });
+
+                    alert = builder.create();
+                    alert.show();
                 }
             }
         });
@@ -65,6 +92,15 @@ public class ToWatchFragment extends Fragment {
 
         if (moviesList.results != null) {
             final ToWatchListAdapter lstAdp = new ToWatchListAdapter(getContext(), moviesList.results);
+
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    listView.setAdapter(lstAdp);
+                }
+            });
+        } else {
+            final ToWatchListAdapter lstAdp = new ToWatchListAdapter(getContext(), new ArrayList<Movie>());
 
             getActivity().runOnUiThread(new Runnable() {
                 @Override

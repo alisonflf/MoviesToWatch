@@ -7,4 +7,12 @@
     <string name="labelSearchMovie">Search</string>
     <string name="msgNoConection">No internet connection, you will not be able to search</string>
     <string name="msgConnectionRestored">Connection restored, you\'re alowed to search a movie</string>
+    <string name="msgYes">Yes</string>
+    <string name="msgWatchLaterQuestion">Do you wish to mark the movie so you can watch it later?</string>
+    <string name="msgMovieAdded">Movie added to watch list</string>
+    <string name="msgErroRecording">Error recording data</string>
+    <string name="msgNo">No</string>
+    <string name="msgMovieWatched">Mark Movie as watched?</string>
+    <string name="msgMovieMarkedWatched">Movie Marked as watched</string>
+    <string name="msgReturnToWatch">return movie to watch later list?</string>
 </resources>
