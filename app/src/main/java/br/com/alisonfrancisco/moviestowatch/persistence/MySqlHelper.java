@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MySqlHelper extends SQLiteOpenHelper {
 
-    private static int VERSION = 1;
+    private static int VERSION = 2;
     private static String DATABASE_NAME = "moviesdatabase";
 
     public MySqlHelper(Context ctx) {
@@ -16,14 +16,16 @@ public class MySqlHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table movies (_id INTEGER primary key, " +
-                "title TEXT, overview TEXT, watched TEXT);");
+                "title TEXT, overview TEXT, posterpath TEXT, watched TEXT);");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db,
                           int oldVersion,
                           int newVersion) {
-        //if(oldVersion != newVersion){}
+//        if(oldVersion != newVersion){
+//
+//        }
 
     }
 }

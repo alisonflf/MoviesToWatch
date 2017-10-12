@@ -17,7 +17,6 @@
             android:layout_weight="0.26"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="star"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
         <Button

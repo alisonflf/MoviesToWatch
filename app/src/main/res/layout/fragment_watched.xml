@@ -4,5 +4,10 @@
     android:layout_height="match_parent"
     tools:context="br.com.alisonfrancisco.moviestowatch.ui.WatchedFragment">
 
+    <ListView
+        android:id="@+id/listWatched"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.26" />
 
 </FrameLayout>

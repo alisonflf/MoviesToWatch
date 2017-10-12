@@ -6,22 +6,22 @@
     density="xhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1507681248390"
+    timestamp="1507774527642"
     token="1435986073677307978"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FIELD_TYPE_CHANGE" >
 
     <task
         name="javac"
-        duration="1328" />
+        duration="1171" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="39" />
+        duration="25" />
     <task
         name="verifier"
-        duration="6" />
+        duration="7" />
 
     <artifact
         location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
@@ -32,7 +32,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1507680617182"
+        timestamp="1507767673919"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
@@ -73,16 +73,46 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1507681157592"
+        timestamp="1507768881477"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\outputs\apk\app-debug.apk"
-            type="SPLIT_MAIN" />
+            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1507681248390"
+        timestamp="1507771903407"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1507772341723"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1507773808360"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1507774527642"
+        verifier="FIELD_TYPE_CHANGE" >
         <artifact
             location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />

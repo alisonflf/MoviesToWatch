@@ -3,7 +3,6 @@ package br.com.alisonfrancisco.moviestowatch.ui;
 import java.io.IOException;
 
 import android.content.ContentValues;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -76,11 +75,9 @@ public class SearchFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Movie movie = (Movie) adapterView.getItemAtPosition(i);
-                Log.d("ItemClicked", movie.id);
 
                 if (!movie.id.isEmpty()) {
                     insert(movie);
-                    query(movie.title);
                 }
             }
         });
@@ -113,36 +110,11 @@ public class SearchFragment extends Fragment {
         contentValues.put(MyDataBaseContract.Movies.COL_ID, pMovie.id );
         contentValues.put(MyDataBaseContract.Movies.COL_OVERVIEW, pMovie.overview );
         contentValues.put(MyDataBaseContract.Movies.COL_TITLE, pMovie.title );
+        contentValues.put(MyDataBaseContract.Movies.COL_POSTER_PATH, pMovie.posterPath );
         contentValues.put(MyDataBaseContract.Movies.COL_WATCHED, "N" );
         db.insert(MyDataBaseContract.Movies.TABLE_NAME, null, contentValues);
 
         db.close();
-    }
-
-    public void query(String pTitle) {
-        SQLiteDatabase db = mySqlHelper.getWritableDatabase();
-        Cursor c = db.query(MyDataBaseContract.Movies.TABLE_NAME,
-                new String[]{MyDataBaseContract.Movies.COL_ID,
-                        MyDataBaseContract.Movies.COL_TITLE,
-                        MyDataBaseContract.Movies.COL_OVERVIEW,
-                        MyDataBaseContract.Movies.COL_WATCHED},
-                " title = ?",
-                new String[]{pTitle}, null, null, null);
-
-        if (c != null && c.moveToFirst()) {
-
-            int colIdIndex = c.getColumnIndex(MyDataBaseContract.Movies.COL_ID);
-            int colTitleIndex = c.getColumnIndex(MyDataBaseContract.Movies.COL_TITLE);
-            int colOverviewIndex = c.getColumnIndex(MyDataBaseContract.Movies.COL_OVERVIEW);
-            int colWatchedIndex = c.getColumnIndex(MyDataBaseContract.Movies.COL_WATCHED);
-
-            String id = c.getString(colIdIndex);
-            String title = c.getString(colTitleIndex);
-            String overview = c.getString(colOverviewIndex);
-            String watched = c.getString(colWatchedIndex);
-
-            c.close();
-        }
     }
 
     public void onSaveInstanceState(Bundle savedInstanceState) {
