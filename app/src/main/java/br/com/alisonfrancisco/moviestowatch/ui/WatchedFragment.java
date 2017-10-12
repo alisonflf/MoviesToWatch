@@ -12,7 +12,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import br.com.alisonfrancisco.moviestowatch.R;
-import br.com.alisonfrancisco.moviestowatch.adapters.MoviesListAdapter;
+import br.com.alisonfrancisco.moviestowatch.adapters.WatchedListAdapter;
 import br.com.alisonfrancisco.moviestowatch.entities.Movie;
 import br.com.alisonfrancisco.moviestowatch.entities.Movies;
 import br.com.alisonfrancisco.moviestowatch.persistence.MyDataBaseContract;
@@ -51,7 +51,7 @@ public class WatchedFragment extends Fragment {
         moviesList.results = query().results;
 
         if (moviesList.results != null) {
-            final MoviesListAdapter lstAdp = new MoviesListAdapter(getContext(), moviesList.results);
+            final WatchedListAdapter lstAdp = new WatchedListAdapter(getContext(), moviesList.results);
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
