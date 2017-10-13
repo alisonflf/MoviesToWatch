@@ -1,42 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="armeabi-v7a,armeabi"
+    abi="x86"
     api-level="23"
-    build-mode="COLD"
+    build-mode="HOT_WARM"
     density="xhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1507932562531"
+    timestamp="1507936362898"
     token="1435986073677307978"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="437" />
-    <task
-        name="instant-run-dex"
         duration="0" />
     <task
+        name="instant-run-dex"
+        duration="1436" />
+    <task
         name="instant-run-transform"
-        duration="72" />
+        duration="0" />
     <task
         name="verifier"
-        duration="4" />
+        duration="0" />
 
     <artifact
-        location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
+        location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
     <artifact
-        location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\outputs\apk\app-debug.apk"
-        type="SPLIT_MAIN" />
+        location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
     <build
         build-mode="FULL"
-        timestamp="1507931519661"
+        timestamp="1507933598254"
         verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\outputs\apk\app-debug.apk"
-            type="SPLIT_MAIN" />
         <artifact
             location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
@@ -70,31 +67,36 @@
         <artifact
             location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
+        <artifact
+            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1507931821810"
+        timestamp="1507935749225"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
-        <artifact
-            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1507936149492"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\outputs\apk\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
-        build-mode="COLD"
-        timestamp="1507932562531"
-        verifier="COLD_SWAP_REQUESTED" >
+        build-mode="HOT_WARM"
+        timestamp="1507936362898"
+        verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
+            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
         <artifact
-            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\outputs\apk\app-debug.apk"
-            type="SPLIT_MAIN" />
+            location="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

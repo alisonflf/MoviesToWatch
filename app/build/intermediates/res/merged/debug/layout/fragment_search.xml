@@ -10,7 +10,6 @@
         android:id="@+id/search_edit_frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorButtonNormal"
         android:clickable="true">
 
         <android.support.v7.widget.SearchView
@@ -32,7 +31,7 @@
         android:indeterminate="true"
         android:scaleX="0.1"
         android:scaleY="0.1"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
     <ListView
         android:id="@+id/listResult"
