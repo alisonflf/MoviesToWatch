@@ -4,10 +4,10 @@ made for android course from FG
 
 ===============================
 
-using TMDB API for search
+Using TMDB API for Movies Search
 
 Internet Connection Broadcast
 
 Recording on SQLite
 
-//TODO Notifications
+Daily Notifications (just a reminder)
