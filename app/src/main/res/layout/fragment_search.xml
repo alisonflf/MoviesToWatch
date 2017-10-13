@@ -6,32 +6,33 @@
     android:orientation="vertical"
     tools:context="br.com.alisonfrancisco.moviestowatch.ui.SearchFragment">
 
-    <LinearLayout
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/search_edit_frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="?attr/colorButtonNormal"
+        android:clickable="true">
 
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/search_edit_frame"
+        <android.support.v7.widget.SearchView
+            android:id="@+id/searchView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorButtonNormal"
-            android:clickable="true">
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:iconifiedByDefault="true"
+            android:queryHint="@string/queryHint"
+            app:iconifiedByDefault="true" />
 
-            <android.support.v7.widget.SearchView
-                android:id="@+id/searchView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:clickable="true"
-                android:iconifiedByDefault="true"
-                android:queryHint="@string/queryHint"
-                app:iconifiedByDefault="true" />
+    </android.support.design.widget.AppBarLayout>
 
-        </android.support.design.widget.AppBarLayout>
-
-
-    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/indeterminateBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminate="true"
+        android:scaleX="0.1"
+        android:scaleY="0.1"
+        android:visibility="visible" />
 
     <ListView
         android:id="@+id/listResult"

@@ -31,7 +31,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         NotificationCompat.Builder mNotifyBuilder = new NotificationCompat.Builder(context).
                 setSmallIcon(R.drawable.ic_stat_reminder)
-                .setContentTitle(context.getString(R.string.notificationTitle))
+                .setContentTitle(context.getString(R.string.app_name))
                 .setContentText(context.getString(R.string.notificationText))
                 .setSound(alarmSound)
                 .setAutoCancel(true).setWhen(when)

@@ -15,8 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -37,8 +37,9 @@ public class SearchFragment extends Fragment {
     static final String STATE_SEARCH = "edtSearchTest";
     private ListView listView = null;
     private MySqlHelper mySqlHelper;
-    private AlertDialog alerta;
+    private AlertDialog alertDialog;
     private SearchView searchView;
+    private ProgressBar progressBar;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -55,6 +56,8 @@ public class SearchFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
         listView = (ListView) view.findViewById(R.id.listResult);
         mySqlHelper = new MySqlHelper(getActivity());
+        progressBar = (ProgressBar) view.findViewById(R.id.indeterminateBar);
+        progressBar.setVisibility(View.GONE);
 
         searchView = (SearchView) view.findViewById(R.id.searchView);
         searchView.clearFocus();
@@ -63,6 +66,7 @@ public class SearchFragment extends Fragment {
             String search = savedInstanceState.getString(STATE_SEARCH);
 
             if (search != null && !search.isEmpty()) {
+                progressBar.setVisibility(View.VISIBLE);
                 searchMovies(search);
             }
         }
@@ -70,12 +74,14 @@ public class SearchFragment extends Fragment {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                progressBar.setVisibility(View.VISIBLE);
                 searchMovies(query);
                 return true;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                progressBar.setVisibility(View.GONE);
                 return false;
             }
         });
@@ -107,8 +113,8 @@ public class SearchFragment extends Fragment {
                         }
                     });
 
-                    alerta = builder.create();
-                    alerta.show();
+                    alertDialog = builder.create();
+                    alertDialog.show();
                 }
             }
         });
@@ -122,12 +128,9 @@ public class SearchFragment extends Fragment {
         super.onResume();
 
         if (!searchView.getQuery().toString().isEmpty()){
+            progressBar.setVisibility(View.VISIBLE);
             searchMovies(searchView.getQuery().toString());
         }
-
-//        if (!isEmpty(searchEdit)) {
-//            searchMovies();
-//        }
     }
 
     public void insert(Movie pMovie) throws SQLiteConstraintException {
@@ -157,6 +160,7 @@ public class SearchFragment extends Fragment {
                 @Override
                 public void onFailure(Call call, IOException e) {
                     Log.e("e", e.getMessage());
+                    progressBar.setVisibility(View.GONE);
                 }
 
                 @Override
@@ -172,10 +176,12 @@ public class SearchFragment extends Fragment {
                             getActivity().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
+                                    progressBar.setVisibility(View.GONE);
                                     listView.setAdapter(lstAdp);
                                 }
                             });
                         } catch (Exception e) {
+                            progressBar.setVisibility(View.GONE);
                             Log.d("API Class", "exception: " + e.getMessage());
                         }
                     }
@@ -183,6 +189,7 @@ public class SearchFragment extends Fragment {
             });
 
         } catch (Exception e) {
+            progressBar.setVisibility(View.GONE);
             e.printStackTrace();
         }
     }
