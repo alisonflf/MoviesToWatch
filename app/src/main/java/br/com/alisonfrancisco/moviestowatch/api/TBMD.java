@@ -23,7 +23,7 @@ public class TBMD {
         String language = "";
 
         //recupera lingua do dispositivo
-        language = Locale.getDefault().toString();
+        language = Locale.getDefault().toString().toLowerCase().replace("_","-");
 
         //montagem Search URL
         url = "https://api.themoviedb.org/3/search/movie?page=1&query=" +
