@@ -34,6 +34,9 @@
     <string name="navTitleSearch">Buscar Filme</string>
     <string name="navTitleToWatch">Assitir</string>
     <string name="navTitleWatched">Assistidos</string>
+    <string name="notificationText">você listou alguns filmes para assistir depois</string>
+    <string name="notificationTitle">Não se esqueça</string>
+    <string name="queryHint">Nome do filme</string>
     <string msgid="146198913615257606" name="search_menu_title">"Pesquisar"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

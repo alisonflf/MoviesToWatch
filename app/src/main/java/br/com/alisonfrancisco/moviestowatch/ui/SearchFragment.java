@@ -9,19 +9,18 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-import br.com.alisonfrancisco.moviestowatch.MainActivity;
 import br.com.alisonfrancisco.moviestowatch.persistence.MyDataBaseContract;
 import br.com.alisonfrancisco.moviestowatch.persistence.MySqlHelper;
 import okhttp3.Call;
@@ -36,22 +35,13 @@ import br.com.alisonfrancisco.moviestowatch.entities.Movies;
 public class SearchFragment extends Fragment {
     private static final String ARG_API_KEY = "4277f0776300025895ed7999e22fb605";
     static final String STATE_SEARCH = "edtSearchTest";
-    private Button buttonSearch = null;
-    private EditText searchEdit = null;
     private ListView listView = null;
     private MySqlHelper mySqlHelper;
     private AlertDialog alerta;
+    private SearchView searchView;
 
     public SearchFragment() {
         // Required empty public constructor
-    }
-
-    public static SearchFragment newInstance() {
-        SearchFragment fragment = new SearchFragment();
-        Bundle args = new Bundle();
-
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
@@ -63,19 +53,32 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
-        buttonSearch = (Button) view.findViewById(R.id.buttonSearch);
-        searchEdit = (EditText) view.findViewById(R.id.edtSearchQuery);
         listView = (ListView) view.findViewById(R.id.listResult);
         mySqlHelper = new MySqlHelper(getActivity());
+
+        searchView = (SearchView) view.findViewById(R.id.searchView);
+        searchView.clearFocus();
 
         if (savedInstanceState != null) {
             String search = savedInstanceState.getString(STATE_SEARCH);
 
-            if (!search.isEmpty()) {
-                searchEdit.setText(search);
-                searchMovies();
+            if (search != null && !search.isEmpty()) {
+                searchMovies(search);
             }
         }
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                searchMovies(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -110,15 +113,7 @@ public class SearchFragment extends Fragment {
             }
         });
 
-        buttonSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!isEmpty(searchEdit)) {
-                    searchMovies();
-                }
-            }
-        });
-
+        listView.requestFocus();
         return view;
     }
 
@@ -126,9 +121,13 @@ public class SearchFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-        if (!isEmpty(searchEdit)) {
-            searchMovies();
+        if (!searchView.getQuery().toString().isEmpty()){
+            searchMovies(searchView.getQuery().toString());
         }
+
+//        if (!isEmpty(searchEdit)) {
+//            searchMovies();
+//        }
     }
 
     public void insert(Movie pMovie) throws SQLiteConstraintException {
@@ -146,15 +145,15 @@ public class SearchFragment extends Fragment {
     }
 
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putString(STATE_SEARCH, searchEdit.getText().toString());
+        savedInstanceState.putString(STATE_SEARCH, searchView.getQuery().toString());
         super.onSaveInstanceState(savedInstanceState);
     }
 
-    public void searchMovies() {
+    @javax.annotation.ParametersAreNonnullByDefault
+    public void searchMovies(String pSearchString) {
         TBMD tbmdAPI = new TBMD(ARG_API_KEY);
         try {
-            //TODO buscar
-            tbmdAPI.search(searchEdit.getText().toString()).enqueue(new Callback() {
+            tbmdAPI.search(pSearchString).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
                     Log.e("e", e.getMessage());
@@ -163,18 +162,22 @@ public class SearchFragment extends Fragment {
                 @Override
                 public void onResponse(Call call, okhttp3.Response response) throws IOException {
                     if (response.isSuccessful()) {
-                        Gson gson = new Gson();
-                        String body = response.body().string();
-                        Movies movies = gson.fromJson(body, Movies.class);
+                        try {
+                            Gson gson = new Gson();
+                            String body = response.body().string();
+                            Movies movies = gson.fromJson(body, Movies.class);
 
-                        final MoviesListAdapter lstAdp = new MoviesListAdapter(getContext(), movies.results);
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                listView.setAdapter(lstAdp);
-                            }
-                        });
+                            final MoviesListAdapter lstAdp = new MoviesListAdapter(getContext(), movies.results);
 
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    listView.setAdapter(lstAdp);
+                                }
+                            });
+                        } catch (Exception e) {
+                            Log.d("API Class", "exception: " + e.getMessage());
+                        }
                     }
                 }
             });
@@ -182,10 +185,6 @@ public class SearchFragment extends Fragment {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    private boolean isEmpty(EditText etText) {
-        return etText.getText().toString().trim().length() == 0;
     }
 
     @Override

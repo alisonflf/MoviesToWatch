@@ -1,10 +1,8 @@
 package br.com.alisonfrancisco.moviestowatch;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -12,8 +10,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.Toast;
 
+import java.util.Calendar;
+
+import br.com.alisonfrancisco.moviestowatch.receiver.AlarmReceiver;
 import br.com.alisonfrancisco.moviestowatch.ui.SearchFragment;
 import br.com.alisonfrancisco.moviestowatch.ui.ToWatchFragment;
 import br.com.alisonfrancisco.moviestowatch.ui.WatchedFragment;
@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setNotificationAlarm();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -64,6 +65,20 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    private void setNotificationAlarm() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 18);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        Intent intent1 = new Intent(MainActivity.this,
+                AlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0,intent1,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager am = (AlarmManager) this.getSystemService(ALARM_SERVICE);
+        am.setRepeating(AlarmManager.RTC_WAKEUP,
+                calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 
     private void buildFragments(FragmentManager pfragmentManager){
@@ -87,25 +102,4 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager.beginTransaction().replace(R.id.content, pFragment).commit();
     }
 
-    public static boolean isConnected(Context ctx){
-        ConnectivityManager connectivityManager= (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-
-        if (networkInfo != null && networkInfo.isConnected()){
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public class ConnectivityChangeReceiver extends BroadcastReceiver {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-
-            if (!isConnected(context)) {
-                Toast.makeText(context, R.string.msgNoConection, Toast.LENGTH_LONG);
-            }
-        }
-    }
 }

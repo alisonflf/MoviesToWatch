@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="57a5ac68b066d5fb09156021192adddc09c585e6">
+        sha1="772c6435b466cca7b8ce018d55e37436e0faf801">
         <dex dex="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_661280be7a85b61c2a1b9b7c38328569d080b9dc\classes.dex" />
     </item>
     <item
@@ -18,6 +18,15 @@
         revision="25.0.0"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_a4d27b5b4f08db95e60fe16552676c85179c0cad\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\AlisonFrancisco\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\2.0.1\516c03b21d50a644d538de0f0369c620989cd8f0\jsr305-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="516c03b21d50a644d538de0f0369c620989cd8f0">
+        <dex dex="C:\Users\AlisonFrancisco\Desktop\Android\MoviesToWatch\app\build\intermediates\transforms\dex\debug\folders\1000\10\jsr305-2.0.1_025671cc9ce2c6497c8e05c5cf5a16c38cb50d2c\classes.dex" />
     </item>
     <item
         is-multidex="true"

@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="br.com.alisonfrancisco.moviestowatch.ui.SearchFragment">
 
@@ -10,21 +11,26 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/edtSearchQuery"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/search_edit_frame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.26"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textAppearance="@style/TextAppearance.AppCompat" />
-
-        <Button
-            android:id="@+id/buttonSearch"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:focusable="false"
-            android:text="@string/labelSearchMovie" />
+            android:background="?attr/colorButtonNormal"
+            android:clickable="true">
+
+            <android.support.v7.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:clickable="true"
+                android:iconifiedByDefault="true"
+                android:queryHint="@string/queryHint"
+                app:iconifiedByDefault="true" />
+
+        </android.support.design.widget.AppBarLayout>
+
+
     </LinearLayout>
 
     <ListView

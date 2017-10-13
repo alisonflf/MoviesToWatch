@@ -12,8 +12,6 @@ import br.com.alisonfrancisco.moviestowatch.R;
 
 public class NetworkChangeReceiver extends BroadcastReceiver {
 
-    public static final String ACTION = ".receiver.MyReceiver";
-
     @Override
     public void onReceive(Context context, Intent intent) {
         try

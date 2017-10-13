@@ -299,14 +299,7 @@
                     "endOffset": 2455
                 },
                 "from": {
-                    "file": "C:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\src\\main\\res\\values-pt-rBR\\strings.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 909,
-                        "endColumn": 78,
-                        "endOffset": 983
-                    }
+                    "file": "C:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\src\\main\\res\\values-pt-rBR\\strings.xml"
                 }
             },
             {
@@ -318,14 +311,7 @@
                     "endOffset": 2530
                 },
                 "from": {
-                    "file": "C:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\src\\main\\res\\values-pt-rBR\\strings.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 833,
-                        "endColumn": 74,
-                        "endOffset": 903
-                    }
+                    "file": "C:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\src\\main\\res\\values-pt-rBR\\strings.xml"
                 }
             },
             {
@@ -361,14 +347,7 @@
                     "endOffset": 2750
                 },
                 "from": {
-                    "file": "C:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\src\\main\\res\\values-pt-rBR\\strings.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 989,
-                        "endColumn": 83,
-                        "endOffset": 1068
-                    }
+                    "file": "C:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\src\\main\\res\\values-pt-rBR\\strings.xml"
                 }
             },
             {
@@ -436,8 +415,58 @@
                     "startLine": 36,
                     "startColumn": 4,
                     "startOffset": 3050,
+                    "endColumn": 91,
+                    "endOffset": 3137
+                },
+                "from": {
+                    "file": "C:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\src\\main\\res\\values-pt-rBR\\strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1189,
+                        "endColumn": 91,
+                        "endOffset": 1276
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 3142,
+                    "endColumn": 60,
+                    "endOffset": 3198
+                },
+                "from": {
+                    "file": "C:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\src\\main\\res\\values-pt-rBR\\strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1127,
+                        "endColumn": 60,
+                        "endOffset": 1183
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 3203,
+                    "endColumn": 51,
+                    "endOffset": 3250
+                },
+                "from": {
+                    "file": "C:\\Users\\AlisonFrancisco\\Desktop\\Android\\MoviesToWatch\\app\\src\\main\\res\\values-pt-rBR\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 3255,
                     "endColumn": 84,
-                    "endOffset": 3130
+                    "endOffset": 3335
                 },
                 "from": {
                     "file": "C:\\Users\\AlisonFrancisco\\.android\\build-cache\\f85d5c16dd3278b83d7948bbf40a526ce6246b9e\\output\\res\\values-pt-rBR\\values-pt-rBR.xml"
@@ -445,11 +474,11 @@
             },
             {
                 "to": {
-                    "startLine": 37,
+                    "startLine": 40,
                     "startColumn": 4,
-                    "startOffset": 3135,
+                    "startOffset": 3340,
                     "endColumn": 100,
-                    "endOffset": 3231
+                    "endOffset": 3436
                 },
                 "from": {
                     "file": "C:\\Users\\AlisonFrancisco\\.android\\build-cache\\f85d5c16dd3278b83d7948bbf40a526ce6246b9e\\output\\res\\values-pt-rBR\\values-pt-rBR.xml"

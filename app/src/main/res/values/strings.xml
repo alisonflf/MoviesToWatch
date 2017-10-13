@@ -15,4 +15,10 @@
     <string name="msgMovieWatched">Mark Movie as watched?</string>
     <string name="msgMovieMarkedWatched">Movie Marked as watched</string>
     <string name="msgReturnToWatch">return movie to watch later list?</string>
+    <string name="queryHint">Movie Name</string>
+    <string name="reminder_notification_title_template">Reminder: %1$s</string>
+    <string name="action_share">Share</string>
+    <string name="action_reply">Reply</string>
+    <string name="notificationTitle">Don\'t Forget</string>
+    <string name="notificationText">there are some movies you have listed to watch</string>
 </resources>

@@ -15,4 +15,7 @@
     <string name="msgMovieWatched">Marcar o filme como Assistido?</string>
     <string name="msgMovieMarkedWatched">Filme Marcado Como Assistido</string>
     <string name="msgReturnToWatch">retornar o filme a lista \"assistir\"?</string>
+    <string name="queryHint">Nome do filme</string>
+    <string name="notificationTitle">Não se esqueça</string>
+    <string name="notificationText">você listou alguns filmes para assistir depois</string>
 </resources>
